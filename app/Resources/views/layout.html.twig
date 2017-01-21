@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        {% block head %}
-        {% endblock head %}
-        {% include "head.html.twig" %}
-    </head>
-    <body>
-    <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Navbar Link</a></li>
-            </ul>
+<head>
+    {% block head %}
+    {% endblock head %}
+    {% include "head.html.twig" %}
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">Inscription</a></li>
+            <li><a href="#">Conexion</a></li>
+            <li><a href="#">Inscription</a></li>
+        </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Navbar Link</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+{%  block header_image %}
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
+                <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
+                <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
+                <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
+            </div>
         </div>
-    </nav>
+    </div>
+{%  endblock %}
 
+<div class="row">
+    <div class="col m2">
+        {% block left_side_content %}plop{% endblock %}
+    </div>
+    <div class="col m8">
         {% block body %}{% endblock %}
-        <footer class="page-footer orange">
-            {% block footer %}
-            {% include "footer.html.twig"  %}
-            {% endblock %}
-        </footer>
+    </div>
+    <div class="col m2">
+        {% block right_side_content %}plop{% endblock %}
+    </div>
+</div>
 
-        <!--  Scripts-->
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="{{ asset('bundles/app/js/init.js') }}"></script>
-        <script src="{{ asset('bundles/app/js/materialize.js') }}"></script>
-    </body>
+<footer class="page-footer orange">
+    {% block footer %}
+        {% include "footer.html.twig" %}
+    {% endblock %}
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{{ asset('bundles/app/js/init.js') }}"></script>
+<script src="{{ asset('bundles/app/js/materialize.js') }}"></script>
+</body>
 </html>
