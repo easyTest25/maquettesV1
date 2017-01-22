@@ -1,0 +1,84 @@
+{% extends "::layout.html.twig" %}
+
+
+
+{% block body %}
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s6"><a href="#sign-in">Se connecter</a></li>
+                        <li class="tab col s6"><a href="#sign-up">S'inscrire</a></li>
+                    </ul>
+                </div>
+                <div id="sign-up" class="col s12">
+                    <div class="section">
+                        <form action="{{ path('app_subscribe') }}" method="post">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="text" class="validate">
+                                    <label for="last_name">Nom</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="text" class="validate">
+                                    <label for="last_name">Prénom</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="email" class="validate" data-error="wrong"
+                                           data-success="right">
+                                    <label for="last_name">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="password" class="validate">
+                                    <label for="last_name">Mot de passe</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="password" class="validate">
+                                    <label for="last_name">Confirmer le mot de passe</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked"/>
+                                    <label for="filled-in-box">J'ai lu et j'accepte les <a href="#CGV">CGV</a></label>
+                                </div>
+                            </div>
+                            <div class="input-field col s12 center-align">
+                                <button type="submit" class="btn">S'inscire</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="sign-in" class="container col s12">
+                    <form action="">
+                        <div class="section">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="email" class="validate" data-error="wrong"
+                                           data-success="right">
+                                    <label for="last_name">Email</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input id="last_name" type="password" class="validate">
+                                    <label for="last_name">Mot de passe</label>
+                                </div>
+                                <div class="input-field col s12 right-align">
+                                    <input type="submit" class="btn" value="Se connecter"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

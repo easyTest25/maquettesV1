@@ -6,42 +6,38 @@
     {% include "head.html.twig" %}
 </head>
 <body>
-<nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="#">Inscription</a></li>
-            <li><a href="#">Conexion</a></li>
-            <li><a href="#">Inscription</a></li>
-        </ul>
+{% block nav %}
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ path('app_login') }}">Inscription</a></li>
+                <li><a href="#">Conexion</a></li>
+                <li><a href="#">Tarifs</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
 
-        <ul id="nav-mobile" class="side-nav">
-            <li><a href="#">Navbar Link</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-</nav>
-{%  block header_image %}
-    <div class="section no-pad-bot" id="index-banner">
-        <div class="container">
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
-                <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/800/400/food/2"></a>
-                <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/800/400/food/3"></a>
-                <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/800/400/food/4"></a>
-            </div>
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="{{ path('app_login') }}">Inscription</a></li>
+                <li><a href="#">Conexion</a></li>
+                <li><a href="#">Tarifs</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
-    </div>
-{%  endblock %}
+    </nav>
+{% endblock %}
+
+{% block header_image %}{% endblock %}
 
 <div class="row">
     <div class="col m2">
-        {% block left_side_content %}plop{% endblock %}
+        {% block left_side_content %}{% endblock %}
     </div>
     <div class="col m8">
         {% block body %}{% endblock %}
     </div>
     <div class="col m2">
-        {% block right_side_content %}plop{% endblock %}
+        {% block right_side_content %}{% endblock %}
     </div>
 </div>
 
