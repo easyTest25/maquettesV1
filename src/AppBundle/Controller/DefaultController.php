@@ -11,8 +11,7 @@ class DefaultController extends Controller
      */
     public function homeAction()
     {
-        return $this->render('AppBundle:default:index.html.twig', [
-        ]);
+        return $this->render('AppBundle:default:index.html.twig');
     }
 
     /**
@@ -20,8 +19,7 @@ class DefaultController extends Controller
      */
     public function loginAction()
     {
-        return $this->render('AppBundle:default:login.html.twig', [
-        ]);
+        return $this->render('AppBundle:default:login.html.twig');
     }
 
     /**
@@ -29,7 +27,11 @@ class DefaultController extends Controller
      */
     public function subscribeAction()
     {
-        return $this->render('AppBundle:default:subscribe.html.twig', [
-        ]);
+        return $this->render('AppBundle:default:subscribe.html.twig');
+    }
+
+    public function myAdvertsAction()
+    {
+        return $this->render('AppBundle:default:my-adverts.html.twig');
     }
 }

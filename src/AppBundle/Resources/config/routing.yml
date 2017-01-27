@@ -10,3 +10,8 @@ app_subscribe:
     path:      /subscribe
     defaults: { _controller: AppBundle:Default:subscribe }
 
+
+app_my_adverts:
+    path:      /adverts
+    defaults: { _controller: AppBundle:Default:myAdverts }
+
