@@ -34,4 +34,14 @@ class DefaultController extends Controller
     {
         return $this->render('AppBundle:default:my-adverts.html.twig');
     }
+
+    public function dashboardAction()
+    {
+        return $this->render('AppBundle:default:dashboard.html.twig');
+    }
+
+    public function mailboxAction()
+    {
+        return $this->render('AppBundle:default:mailbox.html.twig');
+    }
 }

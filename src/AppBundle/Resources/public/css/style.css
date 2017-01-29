@@ -96,11 +96,7 @@ ul.card-action-buttons li {
 
 .border-right {
     padding: 10px;
-    border-right: 2px solid grey;
-}
-
-.border-bottom {
-    border-bottom: 2px solid grey;
+    border-right: 1px solid #e0e0e0;
 }
 
 .card-type-0 {
@@ -114,3 +110,18 @@ ul.card-action-buttons li {
 }
 
 
+.fixed{
+    position:fixed;
+    top:0;
+    background-color: white;
+    z-index: 100;
+    width: 14%;
+    padding-top: 10px;
+}
+.paddingTop{
+    padding-top:210px; !important;
+}
+
+.collapsible-body {
+    padding: 2rem;
+}

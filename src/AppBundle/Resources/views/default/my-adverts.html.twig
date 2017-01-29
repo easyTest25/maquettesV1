@@ -2,12 +2,17 @@
 
 {% block body %}
     <div class="container">
-        <select name="filter-advert" id="filter-advert">
-            <option>Annonce publiées (2)</option>
-            <option>Annonce en négociation (0)</option>
-            <option>Annonce archivées (4)</option>
-        </select>
-        <h2 class="header">Horizontal Card</h2>
+        <div class="row">
+            <div class="col s5">
+                <select name="filter-advert" id="filter-advert">
+                    <option>Annonce publiées (2)</option>
+                    <option>Annonce en négociation (0)</option>
+                    <option>Annonce archivées (4)</option>
+                </select>
+            </div>
+            <div class="col s7"></div>
+        </div>
+        <h2 class="header">Mes annonces</h2>
         {% for i in 0..3 %}
             <div class="row">
                 <div class="col s12">
@@ -18,7 +23,7 @@
                         <div class="card-stacked">
                             <div class="card-content">
                                 <span class="card-title activator">
-                                    title
+                                    {{ random(['Moto', 'Voiture', 'Quad']) }}
                                     <i class="material-icons right">more_vert</i>
                                     {% if i % 3 == 0 %}
                                         <i class="material-icons right">compare_arrows</i>
@@ -49,7 +54,7 @@
                             </div>
                         </div>
                         <div class="card-reveal">
-                            <span class="card-title">Card Title<i
+                            <span class="card-title">{{ random(['Moto', 'Voiture', 'Quad']) }}<i
                                         class="material-icons right">close</i></span>
                             <div class="row">
                                 <div class="col s6">Date de publication</div>
@@ -90,56 +95,64 @@
 
 {% block left_side_content %}
     <div class="border-right">
-        <div class="border-bottom">
-            <div class="row">
-                <div class="col s12"><a href="">Mes evenments a venir</a></div>
-            </div>
-            <div class="row">
-                <div class="col s12"><a href="">Mon calendrier</a></div>
-            </div>
+        <div class="always-show">
+            <div class="link-action">
+                <div class="row">
+                    <div class="col s12"><a href="">Mes evenements à venir</a></div>
+                </div>
+                <div class="row">
+                    <div class="col s12"><a href="">Mon calendrier</a></div>
+                </div>
 
-            <a class="modal-trigger waves-effect waves-light btn " href="#modal1">Publier une annonce</a>
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <h4>Modal Header</h4>
-                    <p>A bunch of text</p>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                <a class="modal-trigger" href="#modal1">Publier une annonce</a>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                    </div>
                 </div>
             </div>
             <br>
             <br>
+            <div class="divider"></div>
+            <span class="flow-text">Annonce en <br>cours de <br>validation</span>
         </div>
-        <span class="flow-text">Annonce en cours de validation</span>
-        {% for i in 0..3 %}
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="http://lorempixel.com/80/80/nature/{{ i }}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">Card Title<i
+        <div class="card-in-validation">
+            {% for i in 0..2 %}
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="http://lorempixel.com/80/80/nature/{{ i }}">
+                    </div>
+                    <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ random(['Moto', 'Voiture', 'Quad']) }}
+                        <i
                                 class="material-icons right">more_vert</i></span>
-                    <p><a href="#">This is a link</a></p>
+                        <p><a href="#">En savoir plus...</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{ random(['Moto', 'Voiture', 'Quad']) }}<i
+                                    class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
                 </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                    <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
+
 {% endblock %}
 
 {% block nav %}
     <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="{{ path("esay_test_home") }}"
+        <div class="nav-wrapper container"><a id="logo-container" href="{{ path("app_home") }}"
                                               class="brand-logo">Logo</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="">Tableau de bord</a></li>
+                <li><a href="#">Tableau de bord</a></li>
                 <li><a href="#">Mes messages</a></li>
-                <li><a href="#">Mes annonces</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
                 <li><a href="#">Mes evenements</a></li>
                 <li><a href="#">Mon profil</a></li>
                 <li><a href="#">Mon compte</a></li>
@@ -148,7 +161,7 @@
             <ul id="nav-mobile" class="side-nav">
                 <li><a href="">Tableau de bord</a></li>
                 <li><a href="#">Mes messages</a></li>
-                <li><a href="#">Mes annonces</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
                 <li><a href="#">Mes evenements</a></li>
                 <li><a href="#">Mon profil</a></li>
                 <li><a href="#">Mon compte</a></li>

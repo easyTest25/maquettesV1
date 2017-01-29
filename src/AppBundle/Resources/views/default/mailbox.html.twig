@@ -1,0 +1,165 @@
+{% extends "::layout.html.twig" %}
+
+{% block left_side_content%}
+    <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
+
+    <div class="card card-solid">
+        <div class="card-header with-border">
+            <h3 class="card-title">Folders</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-card-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body no-padding">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><i class="fa fa-incard"></i> Incard
+                        <span class="label label-primary pull-right">12</span></a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
+                <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a>
+                </li>
+                <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
+            </ul>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /. card -->
+    <div class="card card-solid">
+        <div class="card-header with-border">
+            <h3 class="card-title">Labels</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-card-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body no-padding">
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
+                <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
+            </ul>
+        </div>
+        <!-- /.card-body -->
+    </div>
+{% endblock %}
+
+{% block body %}
+        <div class="row">
+                <div class="card">
+                    <div class="header ">
+                        <h3 class="card-title">Inbox</h3>
+                        <div class="card-tools pull-right">
+                            <div class="has-feedback">
+                                <input type="text" class=" input-sm" placeholder="Search Mail">
+                                <span class="glyphicon glyphicon-search -feedback"></span>
+                            </div>
+                        </div>
+                        <!-- /.card-tools -->
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body no-padding">
+                        <div class="mailcard-controls">
+                            <!-- Check all button -->
+                            <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                            </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
+                            </div>
+                            <!-- /.btn-group -->
+                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                            <div class="pull-right">
+                                1-50/200
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                            </div>
+                            <!-- /.pull-right -->
+                        </div>
+                            <table class="table highlight striped responsive-table">
+                              <colgroup>
+                                <col width="5%">
+                                <col width="5%">
+                                <col width="20%">
+                                <col width="55%">
+                                <col width="5%">
+                                <col width="10%">
+                              </colgroup>
+                                <tbody>
+                                {% for i in 0..15 %}
+                                     <tr>
+                                        <td style="padding-left: 10px;"><input type="checkbox" id="test-{{ i }}" /><label for="test-{{ i }}">&nbsp;</label></td>
+                                        <td style="max-width: 30px;"><a href="#"><i class="material-icons">star_rate</i></a></td>
+                                        <td><a href="read-mail.html">{{ random(['Leo','Guich', 'Seb','Rodolphe']) }}</a></td>
+                                        <td><div class="truncate"><b>AdminLTE 2.0 Issue</b> - Lorem ipsum dolor sit amet.</div></td>
+                                        <td></td>
+                                        <td>5 mins ago</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <!-- /.table -->
+                        <!-- /.mail-card-messages -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer no-padding">
+                        <div class="mailcard-controls">
+                            <!-- Check all button -->
+                            <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                            </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm"><i class="material-icons">delete</i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="material-icons">reply</i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="material-icons">share</i></button>
+                            </div>
+                            <!-- /.btn-group -->
+                            <button type="button" class="btn btn-default btn-sm"><i class="material-icons">refresh</i></button>
+                            <div class="pull-right">
+                                1-50/200
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="material-icons">keyboard_arrow_left</i></button>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="material-icons">keyboard_arrow_right</i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                            </div>
+                            <!-- /.pull-right -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /. card -->
+            <!-- /.col -->
+        <!-- /.row -->
+{% endblock %}
+
+
+{% block nav %}
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="{{ path("app_home") }}"
+                                              class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Tableau de bord</a></li>
+                <li><a href="#">Mes messages</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                <li><a href="#">Mes evenements</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Mon compte</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="">Tableau de bord</a></li>
+                <li><a href="#">Mes messages</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                <li><a href="#">Mes evenements</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Mon compte</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+{% endblock %}

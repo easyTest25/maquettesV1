@@ -7,40 +7,44 @@
 </head>
 <body>
 {% block nav %}
-    <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="{{ path("esay_test_home") }}" class="brand-logo">Logo</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="{{ path('app_login') }}">Inscription</a></li>
-                <li><a href="#">Conexion</a></li>
-                <li><a href="#">Tarifs</a></li>
-                <li><a href="#">Nous contacter</a></li>
-            </ul>
+    <div class="section">
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="{{ path("app_home") }}"
+                                                  class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ path('app_login') }}">Inscription</a></li>
+                    <li><a href="#">Conexion</a></li>
+                    <li><a href="#">Tarifs</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="{{ path('app_login') }}">Inscription</a></li>
-                <li><a href="#">Conexion</a></li>
-                <li><a href="#">Tarifs</a></li>
-                <li><a href="#">Nous contacter</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="{{ path('app_login') }}">Inscription</a></li>
+                    <li><a href="#">Conexion</a></li>
+                    <li><a href="#">Tarifs</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
 {% endblock %}
 
 {% block header_image %}{% endblock %}
+<br><br>
 
-<div class="row">
-    <div class="col m2">
-        {% block left_side_content %}{% endblock %}
-    </div>
-    <div class="col m8">
-        {% block body %}{% endblock %}
-    </div>
-    <div class="col m2">
-        {% block right_side_content %}{% endblock %}
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col m2 s12 left-side-content">
+                {% block left_side_content %}{% endblock %}
+            </div>
+            <div class="col m10 s12">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
     </div>
 </div>
-
 <footer class="page-footer orange">
     {% block footer %}
         {% include "footer.html.twig" %}

@@ -1,4 +1,4 @@
-esay_test_home:
+app_home:
     path:      /
     defaults: { _controller: AppBundle:Default:home }
 
@@ -14,4 +14,12 @@ app_subscribe:
 app_my_adverts:
     path:      /adverts
     defaults: { _controller: AppBundle:Default:myAdverts }
+
+app_dashboard:
+    path:      /dashboard
+    defaults: { _controller: AppBundle:Default:dashboard }
+
+app_mailbox:
+    path:      /mailbox
+    defaults: { _controller: AppBundle:Default:mailbox }
 
