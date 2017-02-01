@@ -1,140 +1,135 @@
 {% extends "::layout.html.twig" %}
 
-{% block left_side_content%}
-    <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
+{% block left_side_content %}
+    <button data-target="new-message" class="btn">Nouveau</button>
 
-    <div class="card card-solid">
-        <div class="card-header with-border">
-            <h3 class="card-title">Folders</h3>
+    <!-- Modal Structure -->
+    <div id="new-message" class="modal">
+        <div class="modal-content-nav">
+            <nav class="blue">
+                <div class="nav-wrapper">
+                    <div class="left col s12 m5 l5">
+                        <ul>
+                            <li>
+                                <a href="#!" class="email-menu modal-close">
+                                    <i class="material-icons">close</i>
+                                </a>
+                            </li>
+                            <li>Nouveau</li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m7 l7 hide-on-med-and-down">
+                        <ul class="right">
+                            <li><a href="#!"><i class="material-icons">attach_file</i></a>
+                            </li>
+                            <li><a href="#!"><i class="material-icons">send</i></a>
+                            </li>
+                            <li><a href="#!"><i class="material-icons">more_vert</i></a>
+                            </li>
+                        </ul>
+                    </div>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-card-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
+                </div>
+            </nav>
+        </div>
+        <div class="modal-content">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="to_email" type="email" class="validate">
+                            <label for="to_email">Destinaire</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="subject" type="text" class="validate">
+                            <label for="subject">Objet</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="compose" class="materialize-textarea" length="500"></textarea>
+                            <label for="compose">Message</label>
+                            <span class="character-counter" style="float: right; font-size: 12px; height: 1px;"></span>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="card-body no-padding">
-            <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><i class="fa fa-incard"></i> Incard
-                        <span class="label label-primary pull-right">12</span></a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
-                <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
-                <li><a href="#"><i class="fa fa-filter"></i> Junk <span class="label label-warning pull-right">65</span></a>
-                </li>
-                <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
-            </ul>
-        </div>
-        <!-- /.card-body -->
     </div>
-    <!-- /. card -->
-    <div class="card card-solid">
-        <div class="card-header with-border">
-            <h3 class="card-title">Labels</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-card-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-            </div>
-        </div>
-        <div class="card-body no-padding">
-            <ul class="nav nav-pills nav-stacked">
-                <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-                <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
-            </ul>
-        </div>
-        <!-- /.card-body -->
+    <div class="collection">
+        <a href="#!" class="collection-item">Boite de reception</a>
+        <a href="#!" class="collection-item active">Brouillons</a>
+        <a href="#!" class="collection-item">Envoyés</a>
+        <a href="#!" class="collection-item">Poubelle</a>
     </div>
 {% endblock %}
 
 {% block body %}
+    <table>
+        <col width="5%">
+        <col width="5%">
+        <col width="20%">
+        <col width="50%">
+        <col width="20%">
+        <thead>
+        <tr>
+            <th data-field="check" class=" select-all">
+                <input type="checkbox" name="check-line" id="select-all">
+                <label for="select-all"><!-- mandatory label--></label>
+            </th>
+            <th data-field="favorite"></th>
+            <th data-field="id">Objet</th>
+            <th data-field="name">Contenu</th>
+            <th data-field="price">Date de reception</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for i in 0..10 %}
+            <tr>
+                <td>
+                    <input type="checkbox" name="check-line" id="{{ i }}" data-select-all="select-all">
+                    <label for="{{ i }}"><!-- mandatory label--></label>
+                </td>
+                <td>
+                    {% set icon = random(['star', 'star_border']) %}
+                    <a href="#"><i class="material-icons" data-fa>{{ icon }}</i></a>
+                </td>
+                <td>Alvin</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing...</td>
+                <td>$0.87</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <div class="center-align">
         <div class="row">
-                <div class="card">
-                    <div class="header ">
-                        <h3 class="card-title">Inbox</h3>
-                        <div class="card-tools pull-right">
-                            <div class="has-feedback">
-                                <input type="text" class=" input-sm" placeholder="Search Mail">
-                                <span class="glyphicon glyphicon-search -feedback"></span>
-                            </div>
-                        </div>
-                        <!-- /.card-tools -->
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body no-padding">
-                        <div class="mailcard-controls">
-                            <!-- Check all button -->
-                            <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-                            <div class="pull-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
-                                </div>
-                                <!-- /.btn-group -->
-                            </div>
-                            <!-- /.pull-right -->
-                        </div>
-                            <table class="table highlight striped responsive-table">
-                              <colgroup>
-                                <col width="5%">
-                                <col width="5%">
-                                <col width="20%">
-                                <col width="55%">
-                                <col width="5%">
-                                <col width="10%">
-                              </colgroup>
-                                <tbody>
-                                {% for i in 0..15 %}
-                                     <tr>
-                                        <td style="padding-left: 10px;"><input type="checkbox" id="test-{{ i }}" /><label for="test-{{ i }}">&nbsp;</label></td>
-                                        <td style="max-width: 30px;"><a href="#"><i class="material-icons">star_rate</i></a></td>
-                                        <td><a href="read-mail.html">{{ random(['Leo','Guich', 'Seb','Rodolphe']) }}</a></td>
-                                        <td><div class="truncate"><b>AdminLTE 2.0 Issue</b> - Lorem ipsum dolor sit amet.</div></td>
-                                        <td></td>
-                                        <td>5 mins ago</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                            <!-- /.table -->
-                        <!-- /.mail-card-messages -->
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer no-padding">
-                        <div class="mailcard-controls">
-                            <!-- Check all button -->
-                            <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="material-icons">delete</i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="material-icons">reply</i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="material-icons">share</i></button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm"><i class="material-icons">refresh</i></button>
-                            <div class="pull-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="material-icons">keyboard_arrow_left</i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="material-icons">keyboard_arrow_right</i></button>
-                                </div>
-                                <!-- /.btn-group -->
-                            </div>
-                            <!-- /.pull-right -->
-                        </div>
-                    </div>
-                </div>
-                <!-- /. card -->
-            <!-- /.col -->
-        <!-- /.row -->
+            <div class="col s6 select-all">
+                <input type="checkbox" name="check-line" id="select-all">
+                <label for="select-all"><!-- mandatory label--></label>
+            </div>
+            <div class="col s6">
+                <ul class="pagination">
+                    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                    <li class="active"><a href="#!">1</a></li>
+                    <li class="waves-effect"><a href="#!">2</a></li>
+                    <li class="waves-effect"><a href="#!">3</a></li>
+                    <li class="waves-effect"><a href="#!">4</a></li>
+                    <li class="waves-effect"><a href="#!">5</a></li>
+                    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
 {% endblock %}
 
 

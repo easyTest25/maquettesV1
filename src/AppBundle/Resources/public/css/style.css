@@ -125,3 +125,8 @@ ul.card-action-buttons li {
 .collapsible-body {
     padding: 2rem;
 }
+
+.col.select-all {
+    text-align: left;
+    padding-left: 17px;
+}

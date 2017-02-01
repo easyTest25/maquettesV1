@@ -44,4 +44,14 @@ class DefaultController extends Controller
     {
         return $this->render('AppBundle:default:mailbox.html.twig');
     }
+    public function tryListAction()
+    {
+        return $this->render('AppBundle:default:try-list.html.twig');
+    }
+
+    public function advertCalendarAction()
+    {
+        dump('coucou');
+        return $this->render('AppBundle:default:advert-calendar.html.twig');
+    }
 }

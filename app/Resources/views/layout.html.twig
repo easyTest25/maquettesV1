@@ -36,10 +36,15 @@
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col m2 s12 left-side-content">
+            <div class="col s12 center-align">
+                <h2>
+                    {% block content_title %}{% endblock %}
+                </h2>
+            </div>
+            <div class="col m3 s12">
                 {% block left_side_content %}{% endblock %}
             </div>
-            <div class="col m10 s12">
+            <div class="col m9 s12">
                 {% block body %}{% endblock %}
             </div>
         </div>
@@ -53,8 +58,13 @@
 
 
 <!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{{ asset('bundles/app/js/init.js') }}"></script>
-<script src="{{ asset('bundles/app/js/materialize.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/app/js/init.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/app/js/materialize.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/app/js/datatables/datatables.min.js') }}"></script>
+<script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.print.css"></script>
 </body>
 </html>

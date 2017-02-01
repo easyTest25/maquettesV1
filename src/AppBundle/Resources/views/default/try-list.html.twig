@@ -1,0 +1,146 @@
+{% extends "::layout.html.twig" %}
+
+{% block left_side_content %}
+    <button data-target="new-message" class="btn">Nouveau</button>
+
+    <!-- Modal Structure -->
+    <div id="new-message" class="modal">
+        <div class="modal-content-nav">
+            <nav class="blue">
+                <div class="nav-wrapper">
+                    <div class="left col s12 m5 l5">
+                        <ul>
+                            <li>
+                                <a href="#!" class="email-menu modal-close">
+                                    <i class="material-icons">close</i>
+                                </a>
+                            </li>
+                            <li>Nouveau</li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m7 l7 hide-on-med-and-down">
+                        <ul class="right">
+                            <li><a href="#!"><i class="material-icons">attach_file</i></a>
+                            </li>
+                            <li><a href="#!"><i class="material-icons">send</i></a>
+                            </li>
+                            <li><a href="#!"><i class="material-icons">more_vert</i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+        <div class="modal-content">
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="to_email" type="email" class="validate">
+                            <label for="to_email">Destinaire</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="subject" type="text" class="validate">
+                            <label for="subject">Objet</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="compose" class="materialize-textarea" length="500"></textarea>
+                            <label for="compose">Message</label>
+                            <span class="character-counter" style="float: right; font-size: 12px; height: 1px;"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="collection">
+        <a href="#!" class="collection-item">Boite de reception</a>
+        <a href="#!" class="collection-item active">Brouillons</a>
+        <a href="#!" class="collection-item">Envoyés</a>
+        <a href="#!" class="collection-item">Poubelle</a>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <table id="example">
+        <col width="5%">
+        <col width="5%">
+        <col width="20%">
+        <col width="50%">
+        <col width="20%">
+        <thead>
+        <tr>
+            <th data-field="check" class=" select-all">
+                <input type="checkbox" name="check-line" id="select-all">
+                <label for="select-all"><!-- mandatory label--></label>
+            </th>
+            <th data-field="favorite"></th>
+            <th data-field="id">Objet</th>
+            <th data-field="name">Contenu</th>
+            <th data-field="price">Date de reception</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for i in 0..10 %}
+            <tr>
+                <td>
+                    <input type="checkbox" name="check-line" id="{{ i }}" data-select-all="select-all">
+                    <label for="{{ i }}"><!-- mandatory label--></label>
+                </td>
+                <td>
+                    {% set icon = random(['star', 'star_border']) %}
+                    <a href="#"><i class="material-icons" data-fa>{{ icon }}</i></a>
+                </td>
+                <td>Alvin</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing...</td>
+                <td>$0.87</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <div class="center-align">
+        <div class="row">
+            <div class="col s6 select-all">
+                <input type="checkbox" name="check-line" id="select-all">
+                <label for="select-all"><!-- mandatory label--></label>
+            </div>
+            <div class="col s6">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block nav %}
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="{{ path("app_home") }}"
+                                              class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Tableau de bord</a></li>
+                <li><a href="#">Mes messages</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                <li><a href="#">Mes evenements</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Mon compte</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="">Tableau de bord</a></li>
+                <li><a href="#">Mes messages</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                <li><a href="#">Mes evenements</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Mon compte</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+{% endblock %}

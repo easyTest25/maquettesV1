@@ -1,48 +1,47 @@
 {% block footer %}
-<div class="container">
-    <div class="row">
-        <div class="col l3 s12">
-            <h5 class="white-text">A propos</h5>
-            <ul>
-                <li><a class="white-text" href="#!">Link 1</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-
-        </div>
-        <div class="col l3 s12">
-            <h5 class="white-text">Mentions Légales</h5>
-            <ul>
-                <li><a class="white-text" href="{{ path('app_login') }}">Inscription</a></li>
-                <li><a class="white-text" href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
-                <li><a class="white-text" href="{{ path('app_dashboard') }}">Tableau de bord</a></li>
-                <li><a class="white-text" href="{{ path('app_home') }}">Accueil</li>
-            </ul>
-        </div>
-        <div class="col l3 s12">
-            <h5 class="white-text">Professionels</h5>
-            <ul>
-                <li><a class="white-text" href="{{ path('app_mailbox') }}">Mailbox</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-        </div>
-        <div class="col l3 s12">
-            <h5 class="white-text">Nous contacter</h5>
-            <ul>
-                <li><a class="white-text" href="#!">Link 1</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="footer-copyright">
     <div class="container">
-        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        <div class="row">
+            <div class="col l3 s12">
+                <h5 class="white-text">A propos</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Mentions Légales</h5>
+                <ul>
+                    <li><a class="white-text" href="{{ path('app_login') }}">Inscription</a></li>
+                    <li><a class="white-text" href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                    <li><a class="white-text" href="{{ path('app_dashboard') }}">Tableau de bord</a></li>
+                    <li><a class="white-text" href="{{ path('app_home') }}">Accueil</li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Professionels</h5>
+                <ul>
+                    <li><a class="white-text" href="{{ path('app_mailbox') }}">Mailbox</a></li>
+                    <li><a class="white-text" href="{{ path('app_try_list') }}">Mes essaies</a></li>
+                    <li><a class="white-text" href="{{ path('app_advert_calendar') }}">Calendrier par annonce</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+            <div class="col l3 s12">
+                <h5 class="white-text">Nous contacter</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
+    <div class="footer-copyright">
+        <div class="container">
+            Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+    </div>
 {% endblock %}

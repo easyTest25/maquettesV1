@@ -1,0 +1,52 @@
+{% extends "::layout.html.twig" %}
+
+{% block content_title %}Moto à vendre{% endblock %}
+
+{% block body %}
+    <section>
+        <div id='calendar'></div>
+    </section>
+    <section>
+        <div class="legend">
+            <div class="row">
+                <div class="col s6">
+                    <ul class="collection">
+                        <li class="collection-item avatar">
+                            <i class="circle green"></i>
+                            <span class="title">Déplacement pour effectuer une visite ou un essai</span>
+                        </li>
+                        <li class="collection-item avatar">
+                            <i class="circle yellow"></i>
+                            <span class="title">Réception d'un acheteur pour une vente ou un essai</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s6"></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block left_side_content %}
+    <div class="card horizontal">
+        <div class="card-image">
+            <img src="http://lorempixel.com/100/100/nature/6">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                Moto a vendre
+            </div>
+        </div>
+    </div>
+    <div class="collection">
+        <a href="#!" class="collection-item">
+            <label for="desc">Description</label>
+            <textarea class="materialize-textarea" name="desc" id="desc" cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cum dolores error et eum maxime placeat porro sed similique sit ut vero, voluptate. Ab animi consequatur corporis, iure necessitatibus voluptates.</textarea>
+        </a>
+        <a href="#!" class="collection-item"><span class="badge green white-text">En ligne</span>Statut</a>
+        <a href="#!" class="collection-item"><span class="badge green white-text">1 000€</span>Prix proposé</a>
+        <a href="#!" class="collection-item"><span class="red badge white-text">12</span>Apparition dans les recherches</a>
+        <a href="#!" class="collection-item"><span class="blue badge white-text">150</span>Nombre de vue</a>
+        <a href="#!" class="collection-item"><span class="badge new">2</span>Prise de contact</a>
+    </div>
+{% endblock %}

@@ -23,3 +23,11 @@ app_mailbox:
     path:      /mailbox
     defaults: { _controller: AppBundle:Default:mailbox }
 
+app_try_list:
+    path:      /try-list
+    defaults: { _controller: AppBundle:Default:tryList }
+
+app_advert_calendar:
+    path:      /advert-calendar
+    defaults: { _controller: AppBundle:Default:advertCalendar }
+
