@@ -4,7 +4,8 @@
 
 {% block body %}
     <section>
-        <div id='calendar'></div>
+
+        <div id='calendar' class="card"></div>
     </section>
     <section>
         <div class="legend">
@@ -25,6 +26,57 @@
             </div>
         </div>
     </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Motocyclette qui route vite</h4>
+            <div class="row">
+                <div class="col s6">
+                    <div class="row">
+                        <div class="col s12">
+                            <img class="activator" src="http://lorempixel.com/300/300/nature/{{ random(1..10) }}">
+                        </div>
+                        <div class="col s12">
+                            <ul class="collection">
+                                <li class="collection-item">Prix de vente initial : <span class="badge blue white-text">{{ random(1000..1500) }} €</span></li>
+                                <li class="collection-item">Prite de vente négocié : <span class="badge green white-text">{{ random(850..1000) }} €</li>
+                                <li class="collection-item"><a href="#" class="btn">Renegocier</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6">
+                    <div class="row">
+                        <div class="col s12 right-align">Marco Polo</div>
+                        <div class="col s6">Profile</div>
+                        <div class="col s6 right-align">{{ random(['acheteur', 'vendeur']) }}</div>
+                        <hr>
+                        <div class="col s12">
+                            <p>Descriptif de la rencontre</p>
+                        </div>
+                        <div class="col s6">Lieu</div>
+                        <div class="col s6 right-align"><a target="_blank" href="https://www.google.fr/maps/place/Chez+l'titi/@47.2490781,6.2299331,15.25z/data=!4m5!3m4!1s0x0:0xa20d560005109543!8m2!3d47.247914!4d6.2367314">A Bouclans chez Titi</a></div>
+
+                        <div class="col s6">Date de la rencontre</div>
+                        <div class="col s6 right-align">{{ "now"|date("m/d/Y") }}</div>
+
+                        <div class="col s6">Motif</div>
+                        <div class="col s6 right-align">{{ random(['Visite avant achat', 'simple essai']) }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 input-field">
+                            <label for="observations">Observations</label>
+                            <textarea name="observations" id="observations" cols="30" rows="30"
+                                      class="materialize-textarea">J'ai remarque que le mec avait une jolie femme</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Revenir au calendrier</a>
+        </div>
+    </div>
 {% endblock %}
 
 {% block left_side_content %}

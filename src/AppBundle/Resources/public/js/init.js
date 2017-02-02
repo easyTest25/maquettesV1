@@ -30,26 +30,64 @@
                 $('.card-in-validation').css('padding-top', '0px');
             }
         });
-
+        var date = new Date();
+        var d = date.getDate(),
+            m = date.getMonth(),
+            y = date.getFullYear();
         $('#calendar').fullCalendar({
-            header: false,
+            header: {
+                center: '',
+                left: '',
+                right: 'today prev,next'},
             height: 'auto',
+            eventClick: function (calEvent, jsEvent, view) {
+                $('#modal1').modal('open');
+
+            },
             events: [
                 {
-                    title  : 'event1',
-                    start  : '2017-02-11',
-                    editable: true,
-                    color: 'yellow',   // an option!
-                    textColor: 'black'
+                    title: 'All Day Event',
+                    start: new Date(y, m, 1),
+                    backgroundColor: "#f56954", //red
+                    borderColor: "#f56954" //red
                 },
                 {
-                    title  : 'event2',
-                    start  : '2017-02-20'
+                    title: 'Long Event',
+                    start: new Date(y, m, d - 5),
+                    end: new Date(y, m, d - 2),
+                    backgroundColor: "#f39c12", //yellow
+                    borderColor: "#0073b7" //yellow
                 },
                 {
-                    title  : 'event3',
-                    start  : '2010-01-09T12:30:00',
-                    allDay : false // will make the time show
+                    title: 'Meeting',
+                    start: new Date(y, m, d, 10, 30),
+                    allDay: false,
+                    backgroundColor: "#0073b7", //Blue
+                    borderColor: "#f39c12" //Blue
+                },
+                {
+                    title: 'Lunch',
+                    start: new Date(y, m, d, 12, 0),
+                    end: new Date(y, m, d, 14, 0),
+                    allDay: false,
+                    backgroundColor: "#00c0ef", //Info (aqua)
+                    borderColor: "#00c0ef" //Info (aqua)
+                },
+                {
+                    title: 'Birthday Party',
+                    start: new Date(y, m, d + 1, 19, 0),
+                    end: new Date(y, m, d + 1, 22, 30),
+                    allDay: false,
+                    backgroundColor: "#00a65a", //Success (green)
+                    borderColor: "#00a65a" //Success (green)
+                },
+                {
+                    title: 'Click for Google',
+                    start: new Date(y, m, 28),
+                    end: new Date(y, m, 29),
+                    url: 'http://google.com/',
+                    backgroundColor: "#3c8dbc", //Primary (light-blue)
+                    borderColor: "#3c8dbc" //Primary (light-blue)
                 }
             ]
         });
