@@ -31,3 +31,7 @@ app_advert_calendar:
     path:      /advert-calendar
     defaults: { _controller: AppBundle:Default:advertCalendar }
 
+app_my_account:
+    path:      /my-account
+    defaults: { _controller: AppBundle:Default:myAccount }
+

@@ -51,7 +51,13 @@ class DefaultController extends Controller
 
     public function advertCalendarAction()
     {
-        dump('coucou');
         return $this->render('AppBundle:default:advert-calendar.html.twig');
     }
+
+    public function myAccountAction()
+    {
+        return $this->render('AppBundle:default:my-account.html.twig');
+    }
+
+
 }

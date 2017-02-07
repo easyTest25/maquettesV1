@@ -1,0 +1,221 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 right-align">
+                <button class="btn">Désactiver mon comtpe</button>
+            </div>
+        </div>
+        <ul id="tabs-swipe-demo" class="tabs" style="overflow: hidden">
+            <li class="tab col s6"><a href="#test-swipe-1">Information</a></li>
+            <li class="tab col s6 "><a class="active" href="#test-swipe-2">Mon offre</a></li>
+        </ul>
+        <div id="test-swipe-1" class="col s12">
+            <div class="row">
+                <div class="input-field">
+                    <div class="col s6"><label for="name">Nom</label></div>
+                    <div class="col s6"><input type="text" value="Guich" id="name"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <div class="col s6"><label for="">Prénom</label></div>
+                    <div class="col s6"><input type="text" value="Guich" id="prenom"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <div class="col s6"><label for="">Adresse</label></div>
+                    <div class="col s6"><input type="text" value="3 avenue de la résistance 39800 POLIGNY" id="adresse"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <div class="col s6"><label for="">email</label></div>
+                    <div class="col s6"><input type="email" value="email@moi.fr" id="email"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <div class="col s6"><label for="">Numéro de portable</label></div>
+                    <div class="col s6"><input type="tel" value="06.81.54.80.62" id="tel"></div>
+                </div>
+            </div>
+
+
+            <hr>
+
+            <h4>Documents nécéssaires pour tout achat</h4>
+            {% include 'AppBundle:default/forms:inc-form-document-mandatory.html.twig' %}
+        </div>
+        <div id="test-swipe-2" class="col s12">
+            <div class="section">
+                <span class="title flow-text" style="font-size: 1.5em">Les modalitées de mon offre</span>
+
+                <table class="bordered striped responsive-table">
+                    <thead>
+                        <th style="width: 50%">Vendeur</th>
+                        <th>Acheteur</th>
+                    </thead>
+                    <tr>
+                        <td>Sécurité des essais et ventes</td>
+                        <td>Sécurité des achats</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre d'annonce limitée (5 ou plus)</td>
+                        <td>3 essais par an (possibilité d'achat supplémentaire à l'unité)</td>
+                    </tr>
+                    <tr>
+                        <td>5 photos par annonce</td>
+                        <td>Frais normaux sur les transactions</td>
+                    </tr>
+                    <tr>
+                        <td>Règlement des litiges</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr>
+
+            <div class="section">
+                <span class="title flow-text" style="font-size: 1.5em">Commission sur vente (prélevé au moment de la transmission des sommes au vendeur</span>
+                <table class="bordered striped responsive-table">
+                    <thead>
+                    <tr>
+                        <th data-field="id" style="width: 50%">Prix du bien objet de la transaction</th>
+                        <th data-field="name">Montant commission</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>De 0 à 4999 euros</td>
+                        <td>50 euros</td>
+                    </tr>
+                    <tr>
+                        <td>De 5000 à 9999 euros</td>
+                        <td>75 euros</td>
+                    </tr>
+                    <tr>
+                        <td>De 10 000 à 14 999 euros</td>
+                        <td>100 eurox</td>
+                    </tr>
+                    <tr>
+                        <td>A partir de 15000 euros</td>
+                        <td>150 euros</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="section">
+                <span class="title flow-text" style="font-size: 1.5em">Historique de paiement</span>
+                <table class="bordered striped responsive-table ">
+                    <thead>
+                    <tr>
+                        <th data-field="offre">Offre</th>
+                        <th data-field="Montant">Montant payé</th>
+                        <th data-field="Moyen">Moyen de paiement</th>
+                        <th data-field="Date">Date</th>
+                        <th data-field="Facture">Facture</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Premium Vendeur</td>
+                        <td>20€</td>
+                        <td>Paypal</td>
+                        <td>12/03/2017</td>
+                        <td><a href="#">Telecharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Premium Total</td>
+                        <td>20€</td>
+                        <td>Paypal</td>
+                        <td>12/03/2017</td>
+                        <td><a href="#">Telecharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Premium Acheteur</td>
+                        <td>20€</td>
+                        <td>CB</td>
+                        <td>12.07.2017</td>
+                        <td><a href="#">Telecharger</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block left_side_content %}
+    <div class="border-right">
+        <div class="always-show">
+            <div class="link-action">
+                <div class="row">
+                    <div class="col s12"><a href="">Mes evenements à venir</a></div>
+                </div>
+                <div class="row">
+                    <div class="col s12"><a href="">Mon calendrier</a></div>
+                </div>
+
+                <a class="modal-trigger" href="#modal1">Publier une annonce</a>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal modal-fixed-footer">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+{% endblock %}
+
+{% block nav %}
+
+    <ul id="my-account" class="dropdown-content">
+        <li><a href="#!">Compte Premium</a></li>
+        <li><a href="#!">Compte Professionnel</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Déconnexion</a></li>
+    </ul>
+    <ul id="my-account-mobile" class="dropdown-content">
+        <li><a href="#!">Compte Premium</a></li>
+        <li><a href="#!">Compte Professionnel</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Déconnexion</a></li>
+    </ul>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="{{ path("app_home") }}"
+                                              class="brand-logo">Logo</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Tableau de bord</a></li>
+                <li><a href="#">Mes messages</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                <li><a href="#">Mes evenements</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="my-account">Mon compte<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="">Tableau de bord</a></li>
+                <li><a href="#">Mes messages</a></li>
+                <li><a href="{{ path('app_my_adverts') }}">Mes annonces</a></li>
+                <li><a href="#">Mes evenements</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="my-account-mobile">Mon compte<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+{% endblock %}

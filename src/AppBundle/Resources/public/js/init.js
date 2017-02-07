@@ -11,25 +11,32 @@
             }, 2000)
         });
         $('select').material_select();
+        if ($('.left-side-content').length() > 1) {
+            $(window).scroll(function () {
+                    var t = $('.left-side-content').offset();
+                    t = t.top;
 
-        $(window).scroll(function () {
-            var t = $('.left-side-content').offset();
-            t = t.top;
+                    var s = $(window).scrollTop();
 
-            var s = $(window).scrollTop();
+                    var d = t - s;
 
-            var d = t - s;
+                    if (d < 0) {
+                        $('.always-show').addClass('fixed');
+                        $('.left-side-content').addClass('paddingTop');
+                        $('.card-in-validation').css('padding-top', '333px');
+                    } else {
+                        $('.always-show').removeClass('fixed');
+                        $('.left-side-content').removeClass('paddingTop');
+                        $('.card-in-validation').css('padding-top', '0px');
+                    }
+                }
+            );
+        }
+        $(".button-collapse").sideNav();
+        $(".dropdown-button").dropdown(
+            {hover: false}
+        );
 
-            if (d < 0) {
-                $('.always-show').addClass('fixed');
-                $('.left-side-content').addClass('paddingTop');
-                $('.card-in-validation').css('padding-top', '333px');
-            } else {
-                $('.always-show').removeClass('fixed');
-                $('.left-side-content').removeClass('paddingTop');
-                $('.card-in-validation').css('padding-top', '0px');
-            }
-        });
         var date = new Date();
         var d = date.getDate(),
             m = date.getMonth(),
@@ -38,7 +45,8 @@
             header: {
                 center: '',
                 left: '',
-                right: 'today prev,next'},
+                right: 'today prev,next'
+            },
             height: 'auto',
             eventClick: function (calEvent, jsEvent, view) {
                 $('#modal1').modal('open');
